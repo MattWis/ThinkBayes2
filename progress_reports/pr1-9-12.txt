@@ -1,0 +1,34 @@
+Reading:
+
+I read Chapters 2 and 3 of Think Bayes this week. I followed along in Chapter 2 in my python console. mainly to verify that I could properly run Allen's code. For Chapter 3 I just looked at the code presented and verified that I knew what was going on.
+
+I read the suggested reading by Yudkowsky, mainly because I thought it was mandatory. I worked through a few of the presented problems, and I thought it was odd how badly my intuition worked. I was pissed at the "Intuitive" in the title after a few mistakes. I also think some of those mistakes were because I was trying to get through the reading quickly. When I slowed down I made fewer mistakes, but that may also have been that I was absorbing the topics presented.
+
+I scanned over "Frank is a scoundrel, probably," and I'm not sure I'm convinced that you can just make x as small as you want. I would rather have seen something along the lines of the locomotive problem in chapter 3, where you used a power law prior, since the distribution of dedication among scoundrels will probably follow a power law. (Yes, that's probably a good exercise. No, I haven't done it.)
+
+Exercises:
+
+I filled a whiteboard or two with some of the problems in the Yudkowsky reading. I erased them when I was done, so I don't really have anything to write up there.
+
+I also did the in-class exercises on 9/9, though that was mostly looking at "dir(pmf)" and guessing which functions to try. The final problem (8) is written up below, mainly because I think this is an inelegant way to do it and I'm looking for feedback.
+
+```
+from thinkbayes2 import Pmf
+import thinkplot
+d6 = Pmf(range(1,7))
+three = d6 + d6 + d6
+for i in range(3,9):
+    three.Remove(i)
+three.Normalize()
+print three.ProbGreater(16)
+```
+
+Case Study:
+
+I talked to Louis, and we want to be partners. We haven't gotten past that.
+
+Reflections:
+
+From the Yudkowsky reading, I most like the idea of credibility being measured in decibels, and how it was sometimes better to calculate in odds instread of percentages. It was nice to see the different unit systems and when they were applied.
+
+
