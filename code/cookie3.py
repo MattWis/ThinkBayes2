@@ -1,22 +1,17 @@
 """This file contains code for use with "Think Bayes",
 by Allen B. Downey, available from greenteapress.com
 
-Copyright 2012 Allen B. Downey
+Copyright 2014 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
 from __future__ import print_function, division
 
-from thinkbayes2 import Suite
+import thinkbayes2
 
 
-class Cookie(Suite):
+class Cookie(thinkbayes2.Suite):
     """A map from string bowl ID to probablity."""
-
-    mixes = {
-        'Bowl 1':dict(vanilla=0.75, chocolate=0.25),
-        'Bowl 2':dict(vanilla=0.5, chocolate=0.5),
-        }
 
     def Likelihood(self, data, hypo):
         """The likelihood of the data under the hypothesis.
@@ -24,18 +19,24 @@ class Cookie(Suite):
         data: string cookie type
         hypo: string bowl ID
         """
-        mix = self.mixes[hypo]
-        like = mix[data]
+        like = hypo[data] / hypo.Total()
+        if like:
+            hypo[data] -= 1
         return like
 
 
 def main():
-    hypos = ['Bowl 1', 'Bowl 2']
+    bowl1 = thinkbayes2.Hist(dict(vanilla=30, chocolate=10))
+    bowl2 = thinkbayes2.Hist(dict(vanilla=20, chocolate=20))
+    pmf = Cookie([bowl1, bowl2])
 
-    pmf = Cookie(hypos)
-
+    print('After 1 vanilla')
     pmf.Update('vanilla')
+    for hypo, prob in pmf.Items():
+        print(hypo, prob)
 
+    print('\nAfter 1 vanilla, 1 chocolate')
+    pmf.Update('chocolate')
     for hypo, prob in pmf.Items():
         print(hypo, prob)
 
