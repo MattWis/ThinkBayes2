@@ -30,15 +30,18 @@ def main():
     bowl2 = thinkbayes2.Hist(dict(vanilla=20, chocolate=20))
     pmf = Cookie([bowl1, bowl2])
 
-    print('After 1 vanilla')
-    pmf.Update('vanilla')
+    for i in range(21):
+        pmf.Update('chocolate')
+
+    #print('After 1 vanilla')
+    #pmf.Update('vanilla')
     for hypo, prob in pmf.Items():
         print(hypo, prob)
 
-    print('\nAfter 1 vanilla, 1 chocolate')
-    pmf.Update('chocolate')
-    for hypo, prob in pmf.Items():
-        print(hypo, prob)
+    #print('\nAfter 1 vanilla, 1 chocolate')
+    #pmf.Update('chocolate')
+    #for hypo, prob in pmf.Items():
+        #print(hypo, prob)
 
 
 if __name__ == '__main__':
