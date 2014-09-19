@@ -1,0 +1,15 @@
+Reading:
+
+I read Chapters 4 and 5 of Think Bayes this week. I looked at the wikipedia page for the Beta distribution, but I didn't really understand it, or why it lent itself to the optimizations mentioned in Chapter 4. The odds form of Bayes theorem in Chapter 5 made alot of sense to me after working through the Ludkowski reading earlier, though I never actually saw it before. I also felt like the end of Chapter 5 was a bunch of things we had already worked through in class.
+
+I scanned through the "Bayesian solution to the Lincoln index problem." I didn't really understand where the likelihood function came from. I might be able to hand-wave my way through an explanation of it. (I understand that it's the probabilty the tester 1 finds k1 bugs, times the probability that tester 2 finds k2 bugs, c of which overlap with the k1 that tester 1 found.) Also, I know about joint probabilities, but had no idea that the thinkbayes suite included a Joint class. I also liked the comment about the assumption around all bugs having the same probability of being found.
+
+I also scanned through "Thomas Bayes said I shouldn't believe in hydrinos." Nothing terribly groundbreaking there, though a guy in the comments seemed to think that more evidence from other credible people wouldn't affect your thinking, which is the opposite of Bayesian reasoning. You just stated that the evidence isn't there yet. (Assuming it ever will be.)
+
+Exercises:
+
+I really like Oliver's blood in Chapter 5. It was really unintuitive, but is useful to think about. The quote about consistency not necessarily being in favor of really stuck with me.
+
+I didn't do any exercises outside of class this week that weren't included in the reading.
+
+
