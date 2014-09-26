@@ -1,0 +1,23 @@
+Reading:
+
+I read Chapters 6 and 7 of ThinkBayes this week. In the examples given, I was surprised both at how many steps there were to coming up with the solution, and how easy those steps were. (Data gathering not included, that can be difficult.) Its nice to do a problem when you have access to or can create all of the relevant distributions.
+
+I really enjoyed Nate Silver's article on his model. I liked the Sam Wang call-out, especially because the normal distribution gets overused, and the tails on most distributions are fatter. It was nice to see how he tried to include all of the information he could, making modelling decisions to weight the various data. Also, the concept of rating pollsters was really fun, and pretty useful.
+
+I didn't really enjoy the Bayesian Methods for Hackers. It seemed to cover topics I had already seen, and introduce a library that I'm going to forget about before it can become useful. Hearing about the Poisson process from a different angle was nice, but the rest of it wasn't that useful.
+
+Exercises:
+
+While we were doing the electorate example in class, I gave my array of possible outcomes 1000 values, for resolution reasons. It ended up making a substantial difference (3%?) in the final results. I assume this happens because there is so much density of outcomes near the 50% mark.
+
+Case Study:
+
+When reading Chapter 7, I really disliked the normal prior. (See above.) Maybe I misunderstand it, but if your data (for the Bruins) include 0 and 8, then having a N(2.8. 0.3) prior is silly. Neither of those points are remotely likely (-9 sigma and +17 sigma). When you focused only on the pairwise games, sigma increased because there was less data, not necessarily any other reason. Maybe I'm misunderstanding. Either way, would finding good priors for playoff/championship sports be a good case study?
+
+Also, when I glanced at the Weibull distribution, I thought that a case study in equipment lifetimes might be pretty cool. I've heard that, for different machines, it can be better to buy a new one or a used one, and I remember being surprised by that. It would be interesting to look into further. I'm not sure what equipment would be worth looking into, though.
+
+Reflection:
+
+I had heard of Poisson processes before this class, but really only recognized the name. (And people always mentioned that it can be used to model bus stops...) It was nice to hear what it actually does and how it does it.
+
+I think I have to fill out some paperwork to make this class fit the ProbStat requirement, but I'm not sure how to go about that.
