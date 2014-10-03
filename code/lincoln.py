@@ -21,7 +21,7 @@ http://tinyurl.com/lincoln14
 Last year my occasional correspondent John D. Cook wrote an excellent
 blog post about the Lincoln index, which is a way to estimate the
 number of errors in a document (or program) by comparing results from
-two independent testers. 
+two independent testers.
 
 http://www.johndcook.com/blog/2010/07/13/lincoln-index/
 
@@ -119,17 +119,22 @@ def main():
     suite = Lincoln(hypos)
     suite.Update(data)
 
-    n_marginal = suite.Marginal(0)
+    p1_marginal = suite.Marginal(1)
+    p2_marginal = suite.Marginal(2)
 
-    thinkplot.Pmf(n_marginal, label='n')
-    thinkplot.Save(root='lincoln1',
-                   xlabel='number of bugs',
-                   ylabel='PMF',
-                   formats=['pdf', 'png'])
+    print (p1_marginal.ProbGreater(p2_marginal))
 
-    print('post mean n', n_marginal.Mean())
-    print('MAP n', n_marginal.MaximumLikelihood())
-    
-    
+    thinkplot.Pdf(p1_marginal, label='p1')
+    thinkplot.Pdf(p2_marginal, label='p2')
+    thinkplot.Show()
+    #thinkplot.Save(root='lincoln1',
+                   #xlabel='number of bugs',
+                   #ylabel='PMF',
+                   #formats=['pdf', 'png'])
+
+    #print('post mean n', n_marginal.Mean())
+    #print('MAP n', n_marginal.MaximumLikelihood())
+
+
 if __name__ == '__main__':
     main()

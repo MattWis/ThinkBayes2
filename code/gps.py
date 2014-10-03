@@ -20,11 +20,14 @@ class Gps(thinkbayes2.Suite, thinkbayes2.Joint):
     def Likelihood(self, data, hypo):
         """Computes the likelihood of the data under the hypothesis.
 
-        hypo: 
-        data: 
+        hypo: x, y
+        data: x_measured, y_measured
         """
-        # TODO: fill this in
-        like = 1
+        x, y = hypo
+        x_measured, y_measured = data
+
+        like = (thinkbayes2.EvalNormalPdf(x_measured - x, 0, 30) *
+                thinkbayes2.EvalNormalPdf(y_measured - y, 0, 30))
         return like
 
 
@@ -45,6 +48,12 @@ def main():
              (45.58108994142448, 3.5718287379754585)]
 
     joint.UpdateSet(pairs)
+
+    x_marg = joint.Marginal(0)
+    y_marg = joint.Marginal(1)
+
+    thinkplot.Pdfs([x_marg, y_marg])
+    thinkplot.Show()
 
     # TODO: plot the marginals and print the posterior means
 
