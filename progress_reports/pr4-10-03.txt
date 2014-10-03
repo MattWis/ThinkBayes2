@@ -1,0 +1,23 @@
+Reading:
+
+I read Chapters 9 and 10 of ThinkBayes this week. I wasn't exactly sold on the modelling decisions in the paintball problem. Because people shoot at other people, I would expect the shots to be relatively clustered regardless of where your opponent was hiding. It would make more sense if your team was mobile, and you knew that your opponent was camping somewhere. I also really enjoyed ABC, and I like the idea of the probability of seeing data that is "equivalent" in some sense to the data set observed, especially highlighting the modelling decisions involved in defining equivalent.
+
+I read Bayesian Election Forecasting, but didn't get much out of it relative to Nate Silver's article. We did the given problem in class, and Nate Solver really hammered the point of spread being as important as a point estimate.
+
+I was really hopeful about the multi-armed bandit problem, and somewhat discouraged when it turned out to be about gambling and slot machines. I was really hoping for a more colorful introduction. It was cool to see that the Bayesian update had the best long-run expected regret, though I was somewhat confused that taking the upper credible bound would be better for 6000 or so pulls (expected), and then Bayesian would overtake it. I also liked the idea of mixing Bayesian bandits with different rates of learning, and having a meta-Bayesian bandit. I was surprised that he didn't include that in the simulation. Shouldn't it have been the best?
+
+Exercises:
+
+I didn't work on exercises outside of class this week, electing instead to meet with Alex Crease about our case study.
+
+Case Study:
+
+For our case study, we would like to try to generalize the Poisson process of scoring in a soccer game to a game of football. Scoring in football is more complicated than soccer because of the different scoring methods, so we will take steps to limit it’s complexity. We will simplifying the game to only 7 point touchdowns and 3 point field goals. We will also neglect time management strategies teams use. We are unsure whether it would be better to model scoring both types of goals as one Poisson process, and weight the probability of each method of scoring, or to model each type of scoring as it’s own Poisson process.
+
+There are a number of enhancements that would make our model more accurate that could be incorporated into our stretch goal for the project. As a small reach goal we could incorporate field position into the predictions. This has a major effect on the game, so we expect it to improve our model. We would begin by incorporating field position at the granularity of one drive. (A drive would be summarized by how many points were scored, and where the opponent gets the ball.) A further stretch would be to predict each 1st-and-10. We believe that individual downs would add too much complexity to our model.
+
+Similar to the soccer example, it would be nice to be able to input data as the game progresses, and see the win percentages and expected points scored change over time. As mentioned above, this would probably done by drive, and possibly done by first down. Our results would include the probability that a certain team would win, the average number of goals per team, and a prediction of when and how a team will score.
+
+Reflection:
+
+I enjoyed going over marginal distributions. I don't actually remember where I first encountered them (AP stats?), but I was a little rusty with them. I also have been thinking about machine learning applications of Bayesian (living next to Luke Metz invokes that), and I really appreciated ABC for that, since machine learning generally involves a ton of data. I know that there is a method of machine learning called Naive Bayes, and I am wondering how it is efficient, based on what we've done in class. Do you assume everything is normal?
