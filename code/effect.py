@@ -42,6 +42,25 @@ def RunEstimate(update_func, num_points=31, median_flag=False):
 
     # TODO: compute and plot the distribution of d
 
+    d_pmf = thinkbayes2.Pmf()
+    for (m_mu, m_sig), m_p in suite1.Items():
+        for (f_mu, f_sig), f_p in suite2.Items():
+            d_pmf.Incr((m_mu - f_mu) * 2 / (m_sig + f_sig), m_p * f_p)
+
+    thinkplot.Cdf(d_pmf.MakeCdf())
+
+    m_mu = suite1.Marginal(0)
+    f_mu = suite2.Marginal(0)
+    m_sig = suite1.Marginal(1)
+    f_sig = suite2.Marginal(1)
+
+    d_pmf2 = ((m_mu - f_mu) * 2) / (m_sig + f_sig)
+    thinkplot.Cdf(d_pmf2.MakeCdf())
+
+    print(d_pmf.Mean())
+    print(d_pmf2.Mean())
+
+    thinkplot.Show()
 
 def main():
     random.seed(17)
