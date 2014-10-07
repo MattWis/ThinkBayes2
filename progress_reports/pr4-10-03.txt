@@ -1,3 +1,5 @@
+Matt Wismer
+
 Reading:
 
 I read Chapters 9 and 10 of ThinkBayes this week. I wasn't exactly sold on the modelling decisions in the paintball problem. Because people shoot at other people, I would expect the shots to be relatively clustered regardless of where your opponent was hiding. It would make more sense if your team was mobile, and you knew that your opponent was camping somewhere. I also really enjoyed ABC, and I like the idea of the probability of seeing data that is "equivalent" in some sense to the data set observed, especially highlighting the modelling decisions involved in defining equivalent.

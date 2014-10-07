@@ -1,3 +1,5 @@
+Matt Wismer
+
 Reading:
 
 I read Chapters 6 and 7 of ThinkBayes this week. In the examples given, I was surprised both at how many steps there were to coming up with the solution, and how easy those steps were. (Data gathering not included, that can be difficult.) Its nice to do a problem when you have access to or can create all of the relevant distributions.

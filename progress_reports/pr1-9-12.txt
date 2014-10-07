@@ -1,3 +1,5 @@
+Matt Wismer
+
 Reading:
 
 I read Chapters 2 and 3 of Think Bayes this week. I followed along in Chapter 2 in my python console. mainly to verify that I could properly run Allen's code. For Chapter 3 I just looked at the code presented and verified that I knew what was going on.
