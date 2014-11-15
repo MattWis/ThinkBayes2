@@ -22,8 +22,10 @@ class Sat(thinkbayes2.Suite, thinkbayes2.Joint):
         data: boolean, whether the answer is correct
         hypo: pair of (efficacy, difficulty)
         """
-        # TODO: fill this in
-        like = 1
+        if data:
+            like = ProbCorrect(hypo[0], hypo[1])
+        else:
+            like = 1 - ProbCorrect(hypo[0], hypo[1])
         return like
 
 
@@ -49,11 +51,19 @@ def Update(p, q, correct):
     """
     # TODO: fill this in
     # HINT: form a joint distribution, update it, then extract marginals
-    return p, q
+    sat = Sat(thinkbayes2.MakeJoint(p, q))
+    sat.Update(correct)
+
+    student = sat.Marginal(0)
+    question = sat.Marginal(1)
+
+    return student, question
 
 
 def main():
+    # 75% chance of answering correctly if eff - diff = 1
     p1 = thinkbayes2.MakeNormalPmf(0, 1, 3, n=101)
+    thinkbayes2.MakeNormalPmf
     p1.label = 'p1'
     p2 = p1.Copy(label='p2')
 
@@ -72,11 +82,11 @@ def main():
 
     thinkplot.SubPlot(2)
     thinkplot.Pmfs([q1, q2])
-    thinkplot.Show()
 
     print('Prob p1 > p2', p1 > p2)
     print('Prob q1 > q2', q1 > q2)
 
+    thinkplot.Show()
 
 if __name__ == '__main__':
     main()
